@@ -28,7 +28,7 @@ Idade: <input  id="idade"><br><br>
 
             // Obter valores de entrada
             const ingresso = document.getElementById('ingresso').value;
-            const idade = Number(document.getElementById('idade').value);
+            const idade = document.getElementById('idade').value;
 
             // Validar ingresso (deve ter pelo menos 5 caracteres)
             if (ingresso.length >= 5) {
