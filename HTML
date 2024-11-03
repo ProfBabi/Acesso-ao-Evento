@@ -15,6 +15,7 @@
     <!-- Formulário para entrada de dados -->
 Número do Ingresso: <input  id="ingresso"><br><br>
 Idade: <input  id="idade"><br><br>
+CPF:<input id="CPF"><br><br>
 <button onclick="verificarAcesso()">Verificar</button> <!---onclick é um manipulador de eventos-->
 <h3>Resultados:</h3>
 <div id="resultados"></div>
@@ -29,6 +30,7 @@ Idade: <input  id="idade"><br><br>
             // Obter valores de entrada
             const ingresso = document.getElementById('ingresso').value;
             const idade = document.getElementById('idade').value;
+            const CPF=document.getElementById('CPF').value;
 
             // Validar ingresso (deve ter pelo menos 5 caracteres)
             if (ingresso.length >= 5) {
@@ -42,6 +44,11 @@ Idade: <input  id="idade"><br><br>
                 resultadosDiv.innerHTML += '<p class="pass">✔️ Idade permitida</p>';
             } else {
                 resultadosDiv.innerHTML += '<p class="fail">❌ Acesso negado (idade mínima: 18 anos)</p>';
+            }
+           if(CPF.length===11){
+                resultadosDiv.innerHTML += '<p class="pass">✔️ CPF válido </p>';
+            } else{
+                resultadosDiv.innerHTML += '<p class="fail"> x CPF inválido(quantidade errada de dígitos) </p>'
             }
         }
     </script>
